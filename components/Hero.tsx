@@ -1,7 +1,7 @@
 "use client"
 
 import { animate, motion, useMotionTemplate, useMotionValue } from "framer-motion";
-import { use, useEffect } from "react";
+import {  useEffect } from "react";
 import Image from "next/image";
 import { FiArrowRight } from "react-icons/fi";
 
@@ -11,6 +11,7 @@ const obj = "/file.svg"
 
 export const Hero=()=>{
     const color = useMotionValue(COLORS_TOP[0]);
+    // Add 'color' to the dependency array in useEffect
     useEffect(() => {
       animate(color, COLORS_TOP,{
         ease: "easeInOut",
@@ -18,7 +19,7 @@ export const Hero=()=>{
         repeat: Infinity,
         repeatType: "mirror",
       }) 
-    }, [])
+    }, [color]); // Add color here
 
     const backgroundImage= useMotionTemplate `radial-gradient(125% 100% at 50%  0%, #000 50%, ${color})`
        

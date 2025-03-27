@@ -1,4 +1,4 @@
-import { color } from 'framer-motion'
+// Remove the 'color' import if it's not being used
 import React from 'react'
 import { FaReact } from 'react-icons/fa'
 import { SiTypescript } from'react-icons/si'
